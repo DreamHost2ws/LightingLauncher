@@ -1,0 +1,157 @@
+<Window x:Class="AgLauncher.Desktop.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Ag-Lancher" 
+        Height="700" 
+        Width="1000"
+        Background="#FF1F1F1F"
+        Foreground="#FFF5F5F5"
+        WindowStartupLocation="CenterScreen"
+        Icon="pack://application:,,,/Resources/icon.png">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="80"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Border Grid.Row="0" Background="#FF2A2A2A" BorderBrush="#FF00D4FF" BorderThickness="0,0,0,2">
+            <Grid Margin="20,0">
+                <TextBlock Text="🎮 Ag-Lancher" FontSize="24" FontWeight="Bold" Foreground="#FF00D4FF" VerticalAlignment="Center"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Spacing="10">
+                    <Button Content="⚙️ Settings" Style="{StaticResource PrimaryButtonStyle}" Width="120"/>
+                    <Button Content="ℹ️ About" Style="{StaticResource PrimaryButtonStyle}" Width="100"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- Main Content -->
+        <TabControl Grid.Row="1" Background="#FF1F1F1F" Foreground="#FFF5F5F5" BorderThickness="0">
+            <!-- Dashboard Tab -->
+            <TabItem Header="Dashboard" Foreground="#FFF5F5F5" Background="#FF1F1F1F">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <StackPanel Padding="20" Spacing="20">
+                        <!-- User Account Section -->
+                        <Border Background="#FF2A2A2A" BorderBrush="#FF00D4FF" BorderThickness="1" CornerRadius="8" Padding="20">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="80"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Ellipse Grid.Column="0" Width="80" Height="80" Fill="#FF00D4FF"/>
+                                <StackPanel Grid.Column="1" Margin="20,0" VerticalAlignment="Center">
+                                    <TextBlock Text="Username" FontSize="18" FontWeight="Bold"/>
+                                    <TextBlock Text="Online Account" Foreground="#FF00D084" FontSize="12" Margin="0,5,0,0"/>
+                                </StackPanel>
+                                <Button Grid.Column="2" Content="Switch Account" Style="{StaticResource PrimaryButtonStyle}" VerticalAlignment="Center"/>
+                            </Grid>
+                        </Border>
+
+                        <!-- Quick Stats -->
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            
+                            <Border Background="#FF2A2A2A" BorderThickness="1" CornerRadius="8" Padding="20" Margin="0,0,10,0">
+                                <StackPanel>
+                                    <TextBlock Text="📦" FontSize="28" Foreground="#FF00D4FF"/>
+                                    <TextBlock Text="Versions Installed" FontSize="12" Foreground="#FF888888" Margin="0,10,0,0"/>
+                                    <TextBlock Text="5" FontSize="24" FontWeight="Bold" Margin="0,5,0,0"/>
+                                </StackPanel>
+                            </Border>
+                            
+                            <Border Background="#FF2A2A2A" BorderThickness="1" CornerRadius="8" Padding="20" Margin="10,0">
+                                <StackPanel>
+                                    <TextBlock Text="🧩" FontSize="28" Foreground="#FF00D084"/>
+                                    <TextBlock Text="Mods Installed" FontSize="12" Foreground="#FF888888" Margin="0,10,0,0"/>
+                                    <TextBlock Text="12" FontSize="24" FontWeight="Bold" Margin="0,5,0,0"/>
+                                </StackPanel>
+                            </Border>
+                            
+                            <Border Background="#FF2A2A2A" BorderThickness="1" CornerRadius="8" Padding="20" Margin="10,0,0,0">
+                                <StackPanel>
+                                    <TextBlock Text="⚡" FontSize="28" Foreground="#FFFFFF"/>
+                                    <TextBlock Text="Cache Size" FontSize="12" Foreground="#FF888888" Margin="0,10,0,0"/>
+                                    <TextBlock Text="2.3 GB" FontSize="24" FontWeight="Bold" Margin="0,5,0,0"/>
+                                </StackPanel>
+                            </Border>
+                        </Grid>
+
+                        <!-- Recent Activity -->
+                        <Border Background="#FF2A2A2A" BorderThickness="1" CornerRadius="8" Padding="20">
+                            <StackPanel>
+                                <TextBlock Text="Recent Activity" FontSize="16" FontWeight="Bold" Margin="0,0,0,15"/>
+                                <ItemsControl>
+                                    <TextBlock Text="✓ Launched Minecraft 1.20.1" Foreground="#FF00D084" Margin="0,5"/>
+                                    <TextBlock Text="✓ Installed Fabric Loader" Foreground="#FF00D084" Margin="0,5"/>
+                                    <TextBlock Text="✓ Cache optimized" Foreground="#FF00D084" Margin="0,5"/>
+                                </ItemsControl>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+
+            <!-- Versions Tab -->
+            <TabItem Header="Versions" Foreground="#FFF5F5F5" Background="#FF1F1F1F">
+                <StackPanel Padding="20" Spacing="10">
+                    <TextBlock Text="Minecraft Versions" FontSize="16" FontWeight="Bold"/>
+                    <ListBox Background="#FF2A2A2A" Foreground="#FFF5F5F5">
+                        <ListBoxItem Content="✓ 1.20.1 (Latest)" IsSelected="True"/>
+                        <ListBoxItem Content="○ 1.20"/>
+                        <ListBoxItem Content="○ 1.19.3"/>
+                        <ListBoxItem Content="○ 1.18.2"/>
+                    </ListBox>
+                    <Button Content="Install Version" Style="{StaticResource PrimaryButtonStyle}" Margin="0,10,0,0"/>
+                </StackPanel>
+            </TabItem>
+
+            <!-- Mods Tab -->
+            <TabItem Header="Mods" Foreground="#FFF5F5F5" Background="#FF1F1F1F">
+                <StackPanel Padding="20" Spacing="10">
+                    <TextBlock Text="Installed Mods" FontSize="16" FontWeight="Bold"/>
+                    <ListBox Background="#FF2A2A2A" Foreground="#FFF5F5F5">
+                        <ListBoxItem Content="Fabric Loader 0.14.21"/>
+                        <ListBoxItem Content="Sodium 0.5.0"/>
+                        <ListBoxItem Content="Lithium 0.11.0"/>
+                        <ListBoxItem Content="Phosphor 0.8.0"/>
+                    </ListBox>
+                    <Button Content="Add Mod" Style="{StaticResource PrimaryButtonStyle}" Margin="0,10,0,0"/>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+
+        <!-- Footer / Launch Button -->
+        <Border Grid.Row="2" Background="#FF2A2A2A" BorderBrush="#FF00D4FF" BorderThickness="0,2,0,0">
+            <Grid Margin="20">
+                <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                    <StackPanel Orientation="Horizontal" Spacing="20" Margin="0,0,0,10">
+                        <StackPanel>
+                            <TextBlock Text="Performance Profile" FontSize="12" Foreground="#FF888888"/>
+                            <ComboBox Background="#FF1F1F1F" Foreground="#FFF5F5F5" Width="120">
+                                <ComboBoxItem Content="Ultra" IsSelected="False"/>
+                                <ComboBoxItem Content="High" IsSelected="False"/>
+                                <ComboBoxItem Content="Balanced" IsSelected="True"/>
+                                <ComboBoxItem Content="Low" IsSelected="False"/>
+                            </ComboBox>
+                        </StackPanel>
+                        <StackPanel>
+                            <TextBlock Text="Memory (MB)" FontSize="12" Foreground="#FF888888"/>
+                            <TextBox Background="#FF1F1F1F" Foreground="#FFF5F5F5" Width="120" Text="4096"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+                <Button Content="▶ LAUNCH GAME" Style="{StaticResource PrimaryButtonStyle}" 
+                        HorizontalAlignment="Right" Width="200" Height="50" FontSize="16"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
