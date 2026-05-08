@@ -1,0 +1,58 @@
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Visual Studio cache
+.vs/
+.vscode/
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Rider
+.idea/
+.idea_modules/
+
+# Dependencies
+packages/
+.nuget/
+
+# Build output
+Publish/
+
+# Test Results
+TestResults/
+
+# Files built by Visual Studio
+*.exe
+*.dll
+*.so
+*.dylib
+*.zip
+*.apk
+*.aab
+
+# Cache
+.gradle/
+.m2/
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
