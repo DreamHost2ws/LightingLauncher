@@ -1,4 +1,4 @@
-# 🎮 Ag-Lancher - Advanced Minecraft Launcher
+# 🎮 LightingLauncher - Advanced Minecraft Launcher
 
 A high-performance Minecraft launcher built with C# featuring advanced caching, account management, and cross-platform support (PC, Mobile, JAR).
 
