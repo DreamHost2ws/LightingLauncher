@@ -1,6 +1,6 @@
 # Contributing to Ag-Lancher
 
-Thank you for your interest in contributing! This guide will help you get started.
+Thank you devaru007 for your suuport
 
 ## Getting Started
 
